@@ -63,6 +63,20 @@ board manifest `esp32-gateway.json <https://github.com/platformio/platform-espre
   ; change MCU frequency
   board_build.f_cpu = 240000000L
 
+Board Revisions
+---------------
+
+There are several different revisions of the ESP32 Gateway board, some of the later revisions have different Pin configurations so need some additional configuration.
+
+You can do this by overriding the extra_flags in the board definition, eg for a rev E board: 
+
+.. code-block:: ini
+
+  [env:esp32-gateway]
+  platform = espressif32
+  board = esp32-gateway
+  board_build.extra_flags = "-DARDUINO_ESP32_GATEWAY=\'E\'"
+
 
 Uploading
 ---------
